@@ -1,0 +1,6 @@
+{
+  "name": "SellSecureTech ",
+  "tagline": "Le blog technique de SELL Secure",
+  "body": "Bienvenue sur le blog technique de [Sell Secure](http://sellsecure.com).\r\n\r\nVous retrouverez ici, des articles sur les problématiques que l'on rencontre au fur et à mesure du développement de nos applications. \r\nSi vous aimez le PHP, Symfony, les API REST et autre emberjs vous devriez être comblé !\r\n\r\nBonne lecture à tous.\r\n\r\n\r\nEn passant, si vous avez trouvé une faute de frappe, si vous avez une remarque n'hésitez pas à forker ou à ouvrir une issue sur le [repo](https://github.com/sellsecure/sellsecure.github.io). Merci beaucoup !",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
