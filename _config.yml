@@ -36,7 +36,7 @@ about_stub: >
     N'hésitez pas à échanger avec nous sur ce sujet via twitter: @SLSecure
 about_footer: true
 
-twitter_username: SellSecureTech
+twitter_username: SLsecure
 github_username: sellsecure
 
 favicon: false
@@ -60,10 +60,6 @@ tracking_id:
 ####################################
 
 markdown: kramdown
-
-kramdown:
-    input: GFM
-    syntax_highlighter: rouge
 
 gems:
     - jekyll-paginate
