@@ -79,8 +79,6 @@ Et ainsi de suite, dans une boucle while(true) comme suit
             …
         }
 
-Vous remarquerez que j'ai mis un joli `if statstube` cela permet de dédié des workers à certains tubes
-
 ## Isoler les tubes et les traitements
 
 Jusqu'ici nous avons un seul tube, hors nous avons besoin d'isoler les traitements entre eux. Rien de plus simple on va créer un `worker` par type de job. Et on va écouter le tube qui correspond en priorité.
