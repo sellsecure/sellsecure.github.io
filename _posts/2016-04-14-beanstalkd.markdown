@@ -8,7 +8,7 @@ Le moteur va chercher dans nos bases de données les récurrences des datas et p
 
 Ces traitements qui récupèrent de l'historique sont longs, trop longs pour un traitement web. On est pas loin de la dizaine de secondes avant de pouvoir rendre un résultat.
 
-Le traitement se faisant après le paiement des clients sur le site de nos commerçants ils seraient idiots de les faire patienter aussi longtemps. Nous avons donc du mettre en place une asynchronisation de ces traitements. 
+Le traitement se faisant après le paiement des clients sur le site de nos commerçants il serait idiot de les faire patienter aussi longtemps. Nous avons donc dû mettre en place une asynchronisation de ces traitements. 
 De cette façon on redonne  la main au commerçant rapidement et il récupère l'information quand elle est disponible.
 
 ## La solution technique
@@ -17,7 +17,7 @@ C'est une problématique relativement classique en informatique, du coup on a de
  - RabbitMQ
  - ZeroMQ
  - Beanstalkd
- - Reddis 
+ - Redis 
  - …
  - 
 Nous avons fait notre choix en fonction de notre besoin, nous avions besoin de gestionnaire de files d'attentes rien de plus. 
