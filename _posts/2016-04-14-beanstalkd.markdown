@@ -1,14 +1,14 @@
 ---
 title: 'Asynchroniser ses traitements PHP avec Beanstalkd'
 ---
-Le cœur de SellSecure est une "machine" à scorer des datas. Pour ce faire nous récupérons des dizaines de datas de toutes sorte et nous les passons dans un moteur de règles.
-Le moteur va chercher dans nos bases de données les récurrences des datas. Pour illustrer, on va aller chercher combien de fois est apparu le mail du client sur les n derniers mois. Et on fait la même chose pour beaucoup de datas, pour ne pas dire toutes.
+Le cœur de SellSecure est une "machine" à scorer des transactions. Pour ce faire nous récupérons des dizaines de datas de nos commerçants et nous les passons dans un moteur de règles.
+Le moteur va chercher dans nos bases de données les récurrences des datas et pour chaque type de donnéees il va lui appliquer une pondération. Pour illustrer, on va aller chercher combien de fois est apparu le mail du client sur les n derniers mois. Suivant le nombre de fois où cela apparaît nous modifions la pondération, ce qui influe sur le score final de la transactions.
 
 ## La problématique
 
-Ces traitements qui récupèrent de l'historiques sont longs, trop longs pour un traitement Web. On est pas loin de la dizaine de secondes avant de pouvoir rendre un résultat.
+Ces traitements qui récupèrent de l'historique sont longs, trop longs pour un traitement web. On est pas loin de la dizaine de secondes avant de pouvoir rendre un résultat.
 
-Les commerçants ne peuvent pas attendre, nous avons donc du mettre en place une asynchronisation de ces traitements. 
+Le traitement se faisant après le paiement des clients sur le site de nos commerçants ils seraient idiots de les faire patienter aussi longtemps. Nous avons donc du mettre en place une asynchronisation de ces traitements. 
 De cette façon on redonne  la main au commerçant rapidement et il récupère l'information quand elle est disponible.
 
 ## La solution technique
@@ -30,7 +30,8 @@ https://kr.github.io/beanstalkd/
 
 Beanstalkd est fait en C, donc pas de dépendance. Il ne fait que de la file d’attente il est super rapide, stable et la persistance est possible, que demander de plus !
 
-Pour le câbler sur un projet PHP on l’utilise avec pheanstlakd → https://github.com/pda/pheanstalk Idem, c’est simple du coup pas besoin de mettre en place un bundle juste une ligne dans le composer.json
+Pour le câbler sur un projet PHP on l’utilise avec pheanstlakd → https://github.com/pda/pheanstalk
+Idem, c’est simple du coup pas besoin de mettre en place un bundle juste une ligne dans le composer.json
 
     composer require pda/pheanstalk
 
